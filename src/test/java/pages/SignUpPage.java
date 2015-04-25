@@ -45,8 +45,8 @@ public class SignUpPage {
         lastNameTextBox.sendKeys(lastName);
     }
 
-    public void she_provides_the_email_as(String email) throws Throwable {
-        emailTextBox.sendKeys(email);
+    public void she_provides_the_email_as() throws Throwable {
+        emailTextBox.sendKeys(getemail());
     }
 
     public void she_provides_the_password_as(String password) throws Throwable {
@@ -59,5 +59,9 @@ public class SignUpPage {
 
     public void she_signs_up() throws Throwable {
         signUpButton.click();
+    }
+
+    public String getemail(){
+        return "validemail"+Math.random()+"@yopmail.com";
     }
 }

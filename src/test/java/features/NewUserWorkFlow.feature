@@ -9,7 +9,7 @@ Feature:
     When she chooses to sign up
     And she provides the first name as Testfirstname
     And she provides the second name as Testsecondname
-    And she provides the email as validemail@yopmail.com
+    And she provides the email
     And she provides the password as 123456
     And she provides the confirm passowrd again as 123456
     And she signs-up

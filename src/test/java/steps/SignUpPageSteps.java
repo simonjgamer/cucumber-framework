@@ -28,7 +28,7 @@ public class SignUpPageSteps extends DriverFactory {
         new SignUpPage(driver).she_provides_the_password_as(password);
     }
 
-    @And("^she provides the confirm passowrd again as (.*)$")
+    @And("^she provides the confirm password again as (.*)$")
     public void she_provides_the_confirm_password_again_as(String confirmPassword) throws Throwable {
         new SignUpPage(driver).she_provides_the_confirm_password_again_as(confirmPassword);
     }

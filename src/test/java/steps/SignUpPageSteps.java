@@ -19,8 +19,8 @@ public class SignUpPageSteps extends DriverFactory {
     }
 
     @And("^she provides the email$")
-    public void she_provides_the_email_as() throws Throwable {
-        new SignUpPage(driver).she_provides_the_email_as();
+    public void she_provides_the_email() throws Throwable {
+        new SignUpPage(driver).she_provides_the_email();
     }
 
     @And("^she provides the password as (.*)$")

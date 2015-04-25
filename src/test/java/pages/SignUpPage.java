@@ -45,7 +45,7 @@ public class SignUpPage {
         lastNameTextBox.sendKeys(lastName);
     }
 
-    public void she_provides_the_email_as() throws Throwable {
+    public void she_provides_the_email() throws Throwable {
         emailTextBox.sendKeys(getemail());
     }
 

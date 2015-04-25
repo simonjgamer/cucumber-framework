@@ -1,23 +1,12 @@
 package steps;
 
-import cucumber.api.PendingException;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import pages.HomePage;
-import pages.LandingPage;
-import pages.SignUpPage;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
-/**
- * Created by simonjoshi on 14/03/15.
- */
 public class StartingSteps extends DriverFactory {
 
     @Before
@@ -27,9 +16,16 @@ public class StartingSteps extends DriverFactory {
     }
 
     @After
-      public void afterScenario() {
-        new DriverFactory().destroyDriver();
-        System.out.println("this will run after scenario is finished, even if it failed");
+      public void afterScenario(Scenario scenario) {
+        try {
+            if (scenario.isFailed()) {
+                final byte[] screenshot = ((TakesScreenshot) driver)
+                        .getScreenshotAs(OutputType.BYTES);
+                scenario.embed(screenshot, "image/png");
+            }
+        } finally {
+            new DriverFactory().destroyDriver();
+        }
     }
 
     @Given("^the user is on landing page$")

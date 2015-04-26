@@ -1,9 +1,17 @@
 package pages;
 
+import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import sun.rmi.runtime.Log;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.logging.Logger;
 
 /**
  * Created by simonjoshi on 14/03/15.
@@ -11,14 +19,15 @@ import java.util.concurrent.TimeUnit;
 public class LandingPage {
 
     WebDriver driver;
-    private static final int IMPLICIT_WAIT_TIMEOUT = 5000;
+
+    public By registerLinkLocator = By.cssSelector(".register>a");
 
     public LandingPage(WebDriver driver){
         this.driver = driver;
     }
 
-    public void she_chooses_to_sign_up() throws Throwable {
-        driver.findElement(By.cssSelector(".register>a")).click();
-        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIMEOUT, TimeUnit.MILLISECONDS);
+    public void she_chooses_to_sign_up() {
+        new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(registerLinkLocator));
+        driver.findElement(registerLinkLocator).click();
     }
 }

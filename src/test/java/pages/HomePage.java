@@ -14,6 +14,6 @@ public class HomePage {
     }
 
     public boolean isSignOutLinkDisplayed(){
-        return driver.findElement(By.id("thankyoupage")).isDisplayed();
+        return driver.findElement(By.className("my-account-link")).isDisplayed();
     }
 }

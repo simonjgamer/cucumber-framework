@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/features/",
         glue = "steps",
-        tags = "@test",
-        format = {"pretty", "html:target/cucumber", "json:target/cucumber-report.json"})
-public class RunFeatureTest {
+        tags = "@register",
+        format = {"pretty", "html:target/cucumber/RunRegisterFeatureAT", "json:target/cucumber-register-report.json"})
+public class RunRegisterFeatureAT {
 }

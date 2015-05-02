@@ -3,9 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by simonjoshi on 14/03/15.
- */
 public class HomePage {
     WebDriver driver;
 

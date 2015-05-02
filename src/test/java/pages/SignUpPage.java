@@ -8,9 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by simonjoshi on 14/03/15.
- */
 public class SignUpPage {
 
     WebDriver driver;

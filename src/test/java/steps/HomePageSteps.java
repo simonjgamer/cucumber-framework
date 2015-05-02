@@ -4,9 +4,6 @@ import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import pages.HomePage;
 
-/**
- * Created by simonjoshi on 14/03/15.
- */
 public class HomePageSteps extends DriverFactory {
 
     @Then("^she should be logged in to the website$")

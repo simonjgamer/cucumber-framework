@@ -2,11 +2,7 @@ package steps;
 
 import cucumber.api.java.en.When;
 import pages.LandingPage;
-import pages.SignInPage;
 
-/**
- * Created by simonjoshi on 14/03/15.
- */
 public class LandingPageSteps extends DriverFactory{
 
     @When("^she chooses to sign up$")

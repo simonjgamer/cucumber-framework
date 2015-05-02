@@ -3,9 +3,6 @@ package steps;
 import cucumber.api.java.en.And;
 import pages.SignUpPage;
 
-/**
- * Created by simonjoshi on 14/03/15.
- */
 public class SignUpPageSteps extends DriverFactory {
 
     @And("^she provides the first name as (.*)$")

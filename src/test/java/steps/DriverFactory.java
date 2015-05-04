@@ -13,6 +13,9 @@ public class DriverFactory {
 
     protected static WebDriver driver = new FirefoxDriver();
 
+    final String pathDir = new java.io.File("").getAbsolutePath();
+    final String pathFile = pathDir + "/Images/build/";
+
     public DriverFactory(){
         initialize();
     }
@@ -45,7 +48,7 @@ public class DriverFactory {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         try {
-            FileUtils.copyFile(screenshot, new File("/Users/simonjoshi/layouttest/build/"+pageName+".png"));
+            FileUtils.copyFile(screenshot, new File(pathFile +pageName+".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
